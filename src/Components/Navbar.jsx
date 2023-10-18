@@ -27,15 +27,26 @@ function Navbar() {
         boxShadow: "0 2px 4px 0 rgba(0, 0, 0, 0.2)",
       }}
     >
-      <div className="logo">
-        <div style={{ width: "50px", height: "50px" }}>
-          <img
-            style={{ width: "100%", height: "100%" }}
-            src={logo}
-            alt="Logo"
-          />
+      <Link
+        className="nav-link"
+        activeClass="active"
+        to="home"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        onClick={showNavbar}
+      >
+        <div className="logo">
+          <div style={{ width: "50px", height: "50px" }}>
+            <img
+              style={{ width: "100%", height: "100%" }}
+              src={logo}
+              alt="Logo"
+            />
+          </div>
         </div>
-      </div>
+      </Link>
       <nav ref={navRef}>
         <div></div>
         <div>
@@ -77,7 +88,9 @@ function Navbar() {
           </Link>
         </div>
         <div>
-          <a href="tel:+9647717569058"><button className="hireUsBtn" >Hire us</button></a>
+          <a href="tel:+9647717569058">
+            <button className="hireUsBtn">Hire us</button>
+          </a>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>
